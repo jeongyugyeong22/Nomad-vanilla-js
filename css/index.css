@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Norican&display=swap');
+@font-face {
+    font-family: 'MaplestoryOTFBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    unicode-range:U+AC00-U+D7A3;
+}
+
+body{
+    font-family: 'Courgette', 'MaplestoryOTFBold';
+}
 @keyframes fadeIn{
     from{
         opacity: 0;
@@ -15,10 +28,10 @@
     height: 100%;
     z-index: -1;
     animation: fadeIn 0.5s linear;
-    filter:alpha(opacity=50);
 }
 
 .js-weather{
+    font-family: sans-serif;
     position: fixed;
     top : 0px;
     right : 10px;
@@ -26,17 +39,22 @@
     font-size: 20px;
 }
 
-.js-clock, .clock{
+.js-clock,
+.clock{
     display: block;
     text-align: center;
-    margin: 80px 0 0 0;
+    margin: 50px 0 0 0;
     padding : 0;
-    font-size : 6rem;
+    font-size : 8rem;
     font-weight: bold;
+    color : white;
+    text-shadow: 1px 2px 6px #595959;
+    font-family: 'Norican', cursive;
+    height: 150px;
 }
 
 .js-form,
-.greeings {
+.greeings{
     display: none;
 }
 
@@ -46,17 +64,18 @@
 
 .js-form{
     text-align: center;
-    margin: 30px 0 0 0;
+    margin: 5px 0 0 0;
 }
 
 .js-form > .nameInput{
     text-align: center;
-    width: 500px;
+    width: 400px;
     height: 30px;
     border: none;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid #595959;
     outline: 0;
     font-size: 1.3rem;
+    color: white;
     background : transparent;
     transition: border-bottom .25s ease-in-out;
 }
@@ -66,10 +85,22 @@
     border-bottom: 2px solid white;
 }
 
-.js-greetings{
+.nameInput::placeholder{
+    color: white;
+}
+
+.greeting-container{
     text-align: center;
-    margin : 30px 0 0 0;
-    font-size : 2rem;
+    margin: 5px 0 0 0;
+}
+
+.js-name,
+.js-greet{
+    margin: 5px 0 0 0;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: white;
+    text-shadow: 1px 2px 6px #595959;
 }
 
 .js-toDoForm{
@@ -83,7 +114,8 @@
     width: 250px;
     height: 30px;
     border: none;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid #595959;
+    color:white;
     outline: 0;
     font-size: 1.3rem;
     background : transparent;
@@ -95,14 +127,19 @@
     border-bottom: 2px solid white;
 }
 
-table{
+.toDoInput::placeholder{
+    color: white;
+}
+
+.toDo{
     margin : 50px auto;
     padding : 0 50px 0 50px;
 }
 
 th{
-    font-size: 2rem;
-    color: #40392D;
+    font-size: 2.5rem;
+    color: white;
+    text-shadow: 1px 2px 6px #595959;
 }
 
 td{
@@ -110,9 +147,13 @@ td{
 }
 
 td > ul{
-    color: #E9F0F2;
+    color: white;
     list-style: none;
     font-size: 1.3rem;
+    padding-left: 50px;
+    font-family: 'MaplestoryOTFBold';
+    text-shadow: 1px 2px 6px #595959;
+
 }
 
 button{
