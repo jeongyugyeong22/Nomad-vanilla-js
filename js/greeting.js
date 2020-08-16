@@ -1,6 +1,8 @@
 const form = document.querySelector(".js-form"),
     input = document.querySelector(".nameInput"),
-    greeting = document.querySelector(".js-greetings");
+    greetContainer = document.querySelector(".greeting-container");
+    greeting = document.querySelector(".js-name"),
+    greet = document.querySelector(".js-greet");
 
 
 const USER_LS = "currentUser",
@@ -37,10 +39,20 @@ function greetingText(){
 
 function paintGreeting(text){
     form.classList.remove(SHOWING_CN);
-    greeting.classList.add(SHOWING_CN);
-    const greet = greetingText();
+    greetContainer.classList.add(SHOWING_CN);
+    const greetText = greetingText();
 
-    greeting.innerText = `${greet} ${text} !!`;
+    if(greetText === "Good morning 🤸‍♀️🤸‍♂️"){
+        greet.style.color="#95FF00";
+    } else if(greetText === "Good afternoon 🌼🌻"){
+        greet.style.color="#4AE8BB";
+    } else {
+        greet.style.color="#3E121B";
+    }
+
+    greeting.innerText = `${text}, `;
+    greet.innerText = ` ${greetText}`;
+    
 }
 
 function loadName(){
