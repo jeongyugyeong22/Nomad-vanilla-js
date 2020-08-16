@@ -7,6 +7,7 @@ const toDoForm = document.querySelector(".js-toDoForm"),
 
 const TODO_P = 'PENDING';
 const TODO_F = 'FINISHED';
+let newId = 0;
 let pending = [];
 let finished = [];
 
@@ -48,12 +49,13 @@ function saveFinished() {
     localStorage.setItem(TODO_F, JSON.stringify(finished));
 }
 
-function paintDone(text,id) {
+function paintDone(text) {
     const li = document.createElement("li");
     const delBtn = document.createElement("button");
     const undoBtn = document.createElement("button");
     const span = document.createElement("span");
     const space = document.createElement("span");
+    newId++;
 
     delBtn.innerHTML = "❌";
     delBtn.addEventListener("click", deleteFinished);
@@ -69,12 +71,12 @@ function paintDone(text,id) {
     li.appendChild(space);
     li.appendChild(delBtn);
     li.appendChild(undoBtn);
-    li.id = id;
+    li.id = newId;
     finishList.appendChild(li);
 
     const toDonesObj = {
         text: text,
-        id: id
+        id: newId
     };
 
     finished.push(toDonesObj);
@@ -87,7 +89,7 @@ function paintToDo(text) {
     const checkBtn = document.createElement("button");
     const span = document.createElement("span");
     const space = document.createElement("span");
-    const newId = new Date().getTime();
+    newId++;
 
     delBtn.innerHTML = "❌";
     delBtn.addEventListener("click", deleteToDo);
@@ -138,7 +140,7 @@ function loadToDos() {
     if (loadedFinished !== null) {
         const parsedDones = JSON.parse(loadedFinished);
         parsedDones.forEach(function (toDo) {
-            paintDone(toDo.text,toDo.id);
+            paintDone(toDo.text);
         });
     }
 }

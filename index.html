@@ -16,16 +16,18 @@
     <form class="js-form">
         <input class="nameInput" type="text" placeholder="What's your name 🤔?">
     </form>
-    <h4 class="js-greetings greetings"></h4>
-
+    <section class="greeting-container greetings">
+        <span class="js-name"></span>
+        <span class="js-greet"></span>
+    </section>
     <form class="js-toDoForm">
         <input class="toDoInput" type="text" placeholder="Add Task" />
     </form>
     <section class="toDoContent">
-        <table>
+        <table class="toDo">
             <tr>
-                <th>𝓟𝓮𝓷𝓭𝓲𝓷𝓰</th>
-                <th>𝓕𝓲𝓷𝓲𝓼𝓱𝓮𝓭</th>
+                <th>Pending</th>
+                <th>Finished</th>
             </tr>
             <tr>
                 <td>
@@ -37,6 +39,9 @@
             </tr>
         </table>
     </section>
+
+
+
     <script src="js/clock.js"></script>
     <script src="js/greeting.js"></script>
     <script src="js/todo.js"></script>
